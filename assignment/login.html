@@ -1,0 +1,86 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Contact Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 350px;
+            margin: 80px auto;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        input, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Login / Contact Form</h2>
+    <form onsubmit="submitForm(event)">
+        <label>First Name</label>
+        <input type="text" name="first_name" required>
+
+        <label>Last Name</label>
+        <input type="text" name="last_name" required>
+
+        <label>Email</label>
+        <input type="email" name="email" required>
+
+        <label>Subject</label>
+        <input type="text" name="subject" required>
+
+        <label>Description</label>
+        <textarea name="description" rows="3" required></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<script>
+function submitForm(event) {
+    event.preventDefault();
+    alert("Form submitted successfully!");
+    event.target.reset();
+}
+</script>
+
+</body>
+</html>
