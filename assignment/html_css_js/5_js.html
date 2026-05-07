@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+           margin: 0;
+           min-height: 100vh;
+           font-family: poppins, sans-serif;
+        background:
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.15), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(139, 92, 246, 0.15), transparent 35%),
+        linear-gradient(135deg, #0b1120, #111827, #1e293b, #0f172a);
+        color: #f8fafc;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px;
+        }
+        .main{
+             background: rgba(255, 255, 255, 0.08);
+                border: 1px solid rgba(255, 255, 255, 0.12);
+
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                width: 90%;
+    max-width: 750px;
+        }
+        h1{
+            color:rgb(56, 189, 253);
+            text-align: center;
+            font-size: 38px;
+            margin-bottom: 25px;
+            border-bottom: 2px solid rgba(56, 189, 248, 0.25); ;
+            padding-bottom: 12px;
+        }
+        h2{
+            color: rgb(139, 92, 246);
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+        ol>li{
+            color:gold;
+            margin-bottom: 25px;
+        }
+        ul li{
+            color:#e2e8f0;
+            background:  rgba(255, 255, 255, 0.05);
+
+            padding:10px 15px;
+            margin: 8px 0;
+
+            border-left: 4px solid rgb(56, 189, 248);
+
+            list-style: none;
+        }
+
+        button{
+            background:linear-gradient(45deg, #38bdf8, rgb(35, 49, 55));
+    color: white; 
+
+    border: none;
+    padding: 12px 20px;
+    margin: 12px 8px;
+
+    border-radius: 14px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    transition:  0.3s ease;
+        }
+        button:hover{
+           transform: scale(1.05);
+            background: linear-gradient(45deg, #7dd3fc, rgb(35, 49, 55));
+        }
+        #button{
+            display: flex;
+            text-align: center;
+            justify-content: space-between;
+        }
+
+        ol button{
+            background: #38bdf8;
+            color: #0f172a;
+            border: none;
+            padding: 5px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 12px;
+            transition: transform 0.2s;
+        }
+
+        ul li{   
+            border-radius: 20px;
+            display: flex;
+    justify-content: space-between;
+    align-items: center;}
+        
+        #homepage
+{    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px; 
+    background: #a9abd8;
+    border: none;
+    border-radius: 20px;
+    text-decoration: none;
+
+}
+    </style>
+</head>
+<script>
+function skillEdit(id){
+    const skillItem=document.getElementById(id);
+    const currentText=skillItem.firstChild.textContent.trim();
+    const newText=prompt("Edit Skill", currentText);
+    if(newText==null || newText.trim()===""){
+        alert("Skill update Failed");
+    }
+
+    else{
+        skillItem.firstChild.textContent=newText;
+    }
+}
+</script>
+<body>
+    <section class="main">
+    <h1>Skill Matrix:</h1>
+    <ol>
+        <li>
+            <h2>Frontend Development</h2>
+            <ul>
+                <li id="f1">HTML- intermediate
+                    <button onclick="skillEdit('f1')">Edit</button>
+                </li>
+                <li id="f2">CSS- intermediate
+                    <button onclick="skillEdit('f2')">Edit</button>
+
+                </li>
+                <li id="f3">JavaScript- intermediate
+                    <button onclick="skillEdit('f3')">Edit</button>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <h2>Programming Languages</h2>
+            <ul>
+               
+                <li id="p2">Java- intermediate
+                    <button onclick="skillEdit('p2')">Edit</button>
+
+                </li>
+                <li id="p3">C- intermediate
+                    <button onclick="skillEdit('p3')">Edit</button>
+
+                </li>
+        </li>
+    </ol>
+
+    </section>
+    <a id="homepage" href="https://shareeqshaikh.github.io/4-sem-fet/assignment/1.html">Home Page</a>
+</body>
+</html>
