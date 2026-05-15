@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+
+    <style>
+        body {
+            background-color: lightblue;
+            text-align: center;
+            font-family: Arial;
+            padding-top: 100px;
+        }
+
+        .container {
+            background-color: white;
+            width: 300px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid black;
+        }
+
+        button {
+            padding: 10px 20px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>System Login</h1>
+        <h3 id="message">Enter the secret key!!</h3>
+        <button id="loginBtn">Enter Password</button>
+        <br><br>
+        <a href="https://shareeqshaikh.github.io/4-sem-fet/assignment/1.html">Home Page</a>
+    </div>
+
+    <script>
+        let btn = document.getElementById("loginBtn");
+        let message = document.getElementById("message");
+
+        btn.onclick = function () {
+            let start;
+
+            do {
+                start = prompt("Type READY to start login");
+            } while (start.toLowerCase() !== "ready");
+
+            alert("You have 3 attempts");
+
+            let attempts = 3;
+
+            while (attempts > 0) {
+                let password = prompt("Enter password");
+
+                if (password == "@123") {
+                    alert("Login successful!");
+                    message.textContent = "Login Successful!";
+                    message.style.color = "green";
+                    btn.style.display = "none";
+                    break;
+                } else {
+                    attempts--;
+
+                    if (attempts > 0) {
+                        alert("Wrong password! Attempts left: " + attempts);
+                    } else {
+                        alert("Login failed!");
+                        message.textContent = "Login Failed!";
+                        message.style.color = "red";
+                        btn.style.display = "none";
+                    }
+                }
+            }
+        };
+    </script>
+
+</body>
+</html>
