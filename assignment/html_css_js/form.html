@@ -2,25 +2,23 @@
 <html>
 <head>
     <title>Contact Form</title>
-
     <style>
         body {
-            background-color: lightblue;
+            background: lightblue;
             font-family: Arial;
             text-align: center;
         }
 
-        .main, .main2 {
+        .box, .result {
             background: white;
-            width: 350px;
-            margin: auto;
+            width: 320px;
+            margin: 30px auto;
             padding: 20px;
-            border-radius: 10px;
-            border: 1px solid gray;
+            border-radius: 8px;
             text-align: left;
         }
 
-        .main2 {
+        .result {
             display: none;
         }
 
@@ -28,114 +26,100 @@
             width: 100%;
             padding: 6px;
             box-sizing: border-box;
+            margin-top: 5px;
         }
 
         textarea {
-            height: 80px;
+            height: 70px;
+        }
+
+        .gender input {
+            width: auto;
+        }
+
+        button, a {
+            padding: 8px 15px;
+            border: none;
+            text-decoration: none;
+            border-radius: 5px;
         }
 
         button {
-            width: 100%;
-            padding: 10px;
-            background: darkblue;
+            background: navy;
             color: white;
-            border: none;
-            border-radius: 5px;
+            width: 100%;
         }
 
         a {
-            padding: 10px 15px;
-            text-decoration: none;
-            border-radius: 5px;
             background: white;
             color: black;
-            border: 1px solid gray;
         }
 
         h2 {
             text-align: center;
-        }
-
-        .options {
-            text-align: left;
         }
     </style>
 </head>
 
 <body>
 
-    <div class="main">
+    <div class="box">
         <h2>Contact Form</h2>
-
         <form>
-            Name:<br>
-            <input type="text" id="name"><br><br>
+            Name:
+            <input type="text" id="name">
 
-            Email:<br>
-            <input type="email" id="email"><br><br>
+            Email:
+            <input type="email" id="email">
 
-            Phone:<br>
-            <input type="text" id="phone"><br><br>
-
-            Gender:<br>
-            <div class="options">
+            Gender:
+            <div class="gender">
                 <input type="radio" name="gender" value="Male"> Male
                 <input type="radio" name="gender" value="Female"> Female
-            </div><br>
+            </div>
 
-            Subscribe:<br>
-            <div class="options">
-                <input type="checkbox" id="subscribe"> Newsletter
-            </div><br>
-
-            Country:<br>
+            Country:
             <select id="country">
                 <option>India</option>
                 <option>USA</option>
                 <option>UK</option>
-            </select><br><br>
+            </select>
 
-            Message:<br>
-            <textarea id="message"></textarea><br><br>
+            Message:
+            <textarea id="message"></textarea>
 
+            <br>
             <button type="submit">Submit</button>
         </form>
     </div>
 
-    <div class="main2">
+    <div class="result">
         <h2>Submitted Data</h2>
-        <p>Name: <span id="display-name"></span></p>
-        <p>Email: <span id="display-email"></span></p>
-        <p>Phone: <span id="display-phone"></span></p>
-        <p>Gender: <span id="display-gender"></span></p>
-        <p>Subscribed: <span id="display-subscribe"></span></p>
-        <p>Country: <span id="display-country"></span></p>
-        <p>Message: <span id="display-message"></span></p>
+        <p>Name: <span id="d1"></span></p>
+        <p>Email: <span id="d2"></span></p>
+        <p>Gender: <span id="d3"></span></p>
+        <p>Country: <span id="d4"></span></p>
+        <p>Message: <span id="d5"></span></p>
     </div>
 
     <script>
-        let form = document.querySelector("form");
-
-        form.addEventListener("submit", function(e) {
+        document.querySelector("form").addEventListener("submit", function(e) {
             e.preventDefault();
 
-            display-name.textContent = name.value;
-            display-email.textContent = email.value;
-            display-phone.textContent = phone.value;
-            display-country.textContent = country.value;
-            display-message.textContent = message.value;
+            d1.textContent = name.value;
+            d2.textContent = email.value;
 
-            let gender = document.querySelector('input[name="gender"]:checked');
-            display-gender.textContent = gender ? gender.value : "Not selected";
+            let g = document.querySelector('input[name="gender"]:checked');
+            d3.textContent = g ? g.value : "Not selected";
 
-            display-subscribe.textContent = subscribe.checked ? "Yes" : "No";
+            d4.textContent = country.value;
+            d5.textContent = message.value;
 
-            document.querySelector(".main").style.display = "none";
-            document.querySelector(".main2").style.display = "block";
+            document.querySelector(".box").style.display = "none";
+            document.querySelector(".result").style.display = "block";
         });
     </script>
 
-    <br><br>
     <a href="https://shareeqshaikh.github.io/4-sem-fet/assignment/1.html">Home Page</a>
 
 </body>
