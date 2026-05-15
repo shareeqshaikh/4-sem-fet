@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pull Down Menu</title>
+
+    <style>
+        body {
+            background-color: lightgray;
+            text-align: center;
+        }
+
+        .container {
+            background-color: white;
+            width: 400px;
+            margin: auto;
+            padding: 20px;
+            margin-top: 50px;
+            border: 1px solid black;
+        }
+
+        select {
+            width: 200px;
+            padding: 5px;
+        }
+
+        #output {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid black;
+            background-color: lightgreen;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Pull Down Menu & List Box</h2>
+
+        <label>Select a course:</label><br><br>
+        <select id="courseMenu">
+            <option value="">Choose a course</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="HTML">HTML</option>
+            <option value="CSS">CSS</option>
+            <option value="Python">Python</option>
+        </select>
+
+        <br><br>
+
+        <label>Select your hobbies:</label><br><br>
+        <select id="hobbyList" multiple size="4">
+            <option>Reading</option>
+            <option>Gaming</option>
+            <option>Music</option>
+            <option>Travelling</option>
+        </select>
+
+        <div id="output">Your output will appear here...</div>
+    </div>
+
+    <br>
+    <a href="https://sachinacharya28.github.io/SEM-4-FET/assignments/one.html">Home Page</a>
+
+    <script>
+        let courseMenu = document.getElementById("courseMenu");
+        let hobbyList = document.getElementById("hobbyList");
+        let output = document.getElementById("output");
+
+        courseMenu.addEventListener("change", function () {
+            output.textContent = "Selected Course: " + this.value;
+        });
+
+        hobbyList.addEventListener("change", function () {
+            let selectedHobbies = [];
+
+            for (let option of hobbyList.options) {
+                if (option.selected) {
+                    selectedHobbies.push(option.value);
+                }
+            }
+
+            output.textContent = "Selected Hobbies: " + selectedHobbies.join(", ");
+        });
+    </script>
+
+</body>
+</html>
