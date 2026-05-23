@@ -1,1 +1,14 @@
+   body {
+    background:#FFB6C1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height :100vh;
+}
+        h1 {
+            color:white;
+            font-size: 41px;
+            font-family: Georgia, serif;
+              margin-bottom: 10px;
+        }
 
