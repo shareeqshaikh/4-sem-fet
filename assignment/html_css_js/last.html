@@ -1,67 +1,132 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="last2.css">
-  <title>kekkon.com</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .screen-split {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      width: 100vw;
+    }
+
+    .part {
+      flex: 1;
+      width: 100%;
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .part-1 {
+      background-color: #f4f0ea;
+      justify-content: flex-end;
+    }
+
+    .part-2 {
+      background-color: #1a3328;
+      justify-content: flex-start;
+    }
+
+    .part-3 {
+      background-color: #ded1be;
+      justify-content: space-between;
+    }
+
+    .middle-container {
+      width: 400px;
+      height: 200px;
+      background-color: #f4f0ea;
+      border-radius: 30px;
+      border: 4px solid white;
+      margin-left: 40px;
+    }
+
+    .top-container {
+      width: 400px;
+      height: 200px;
+      background-color: #ded1be;
+      border-radius: 30px;
+      margin-right: 40px;
+      margin-top: 60px;
+    }
+
+    .bottom-container {
+      width: 400px;
+      height: 200px;
+      background-color: #f4f0ea;
+      border-radius: 30px;
+      margin-right: 40px;
+    }
+
+    .anime-image {
+      height: 90%;
+      max-width: 300px;
+      object-fit: contain;
+      margin-left: 40px;
+    }
+
+    .top-bar {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      right: 20px;
+    }
+
+    .logo-box {
+      display: inline-block;
+      background-color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+    }
+
+    .logo-box h1 {
+      margin: 0;
+      font-size: 24px;
+      font-family: sans-serif;
+      color: #1a3328;
+    }
+
+    .register-btn {
+      float: right;
+      background-color: white;
+      color: #1a3328;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 50px;
+      font-family: sans-serif;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Website Title -->
-  <header>
-    <h1>kekkon.com</h1>
-    <p>Find Your Perfect Match</p>
-  </header>
-
-  <!-- Blocks Section -->
-  <div class="container">
-
-    <!-- Card 1 -->
-    <div class="card">
-      <img src="https://via.placeholder.com/300x200" alt="profile1">
-      <p class="profile-name">Name Heading Here</p>
-      
-      <!-- The Absolutely Positioned Baby Pink 4x4 Grid Block -->
-      <div class="pink-block">
-        <div class="compartment comp-a">A3</div>
-        <div class="compartment comp-b">B1</div>
-        <div class="compartment comp-c">C4</div>
-        <div class="compartment comp-d">D2</div>
+  <div class="screen-split">
+    <div class="part part-1">
+      <div class="top-bar">
+        <div class="logo-box">
+          <h1>kekkon</h1>
+        </div>
+        <button class="register-btn">register</button>
       </div>
-      
-      <p>Write your description here...</p>
+      <div class="top-container"></div>
     </div>
-
-    <!-- Card 2 -->
-    <div class="card">
-      <img src="https://via.placeholder.com/300x200" alt="profile2">
-      <p class="profile-name">Name Heading Here</p>
-      
-      <div class="pink-block">
-        <div class="compartment comp-a">A3</div>
-        <div class="compartment comp-b">B1</div>
-        <div class="compartment comp-c">C4</div>
-        <div class="compartment comp-d">D2</div>
-      </div>
-      
-      <p>Write your description here...</p>
+    
+    <div class="part part-2">
+      <div class="middle-container"></div>
     </div>
-
-    <!-- Card 3 -->
-    <div class="card">
-      <img src="https://via.placeholder.com/300x200" alt="profile3">
-      <p class="profile-name">Name Heading Here</p>
-      
-      <div class="pink-block">
-        <div class="compartment comp-a">A3</div>
-        <div class="compartment comp-b">B1</div>
-        <div class="compartment comp-c">C4</div>
-        <div class="compartment comp-d">D2</div>
-      </div>
-      
-      <p>Write your description here...</p>
+    
+    <div class="part part-3">
+      <img class="anime-image" src="https://via.placeholder.com/200x200" alt="anime">
+      <div class="bottom-container"></div>
     </div>
-
   </div>
 
 </body>
