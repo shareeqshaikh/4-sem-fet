@@ -19,7 +19,6 @@ p {
   color: #444;
 }
 
-
 .container {
   display: flex;
   justify-content: center;
@@ -28,30 +27,87 @@ p {
   padding: 20px;
 }
 
-
+/* 1. Added relative position so absolute children anchor here */
 .card {
+  position: relative; 
   background: white;
   width: 250px;
   border-radius: 15px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   padding: 10px;
   transition: transform 0.3s;
+  padding-bottom: 90px; /* Creates empty space at bottom so description doesn't get covered */
 }
-
 
 .card:hover {
   transform: scale(1.05);
 }
-
 
 .card img {
   width: 100%;
   border-radius: 12px;
 }
 
-
 .card p {
   margin-top: 10px;
   font-size: 14px;
   color: #555;
+}
+
+.profile-name {
+  font-weight: bold;
+  color: #b3005e;
+}
+
+/* 2. The Baby Pink Block with a 4x4 Grid System */
+.pink-block {
+  position: absolute;
+  bottom: 45px; /* Positions it nicely below the name heading */
+  left: 10px;
+  right: 10px;
+  height: 70px;
+  background-color: #ffb6c1; /* Baby pink background */
+  border-radius: 8px;
+  padding: 4px;
+  
+  /* Create the 4x4 layout space */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 2px;
+}
+
+/* Basic styling for the inner compartments */
+.compartment {
+  background-color: rgba(255, 255, 255, 0.7);
+  font-size: 9px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  color: #b3005e;
+}
+
+/* 3. Absolute placement of compartments inside the 4x4 grid space */
+/* Format used is grid-column / grid-row */
+
+.comp-b {
+  grid-column: 1; /* Column 1 */
+  grid-row: 1;    /* Row 1 (b1) */
+}
+
+.comp-d {
+  grid-column: 2; /* Column 2 */
+  grid-row: 2;    /* Row 2 (d2) */
+}
+
+.comp-a {
+  grid-column: 3; /* Column 3 */
+  grid-row: 3;    /* Row 3 (a3) */
+}
+
+.comp-c {
+  grid-column: 4; /* Column 4 */
+  grid-row: 4;    /* Row 4 (c4) */
 }
