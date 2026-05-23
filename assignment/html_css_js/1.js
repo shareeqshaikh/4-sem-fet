@@ -4,5 +4,6 @@
         const newRole = prompt('Enter new role:', currentRole);
         if (newRole !== null && newRole.trim() !== '') {
             roleElement.textContent = newRole.trim();
+            alert(Role updatd suuccessfully!");
         }
     }
