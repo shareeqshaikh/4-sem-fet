@@ -22,6 +22,13 @@
         h1 {
             text-align: center;
             color: darkblue;
+            margin-bottom: 5px;
+        }
+
+        .role-container {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 18px;
         }
 
         h2 {
@@ -69,16 +76,27 @@
     </style>
 
     <script>
+        // Function to edit the skills
         function editSkill(id) {
-
             let skill = document.getElementById(id);
-
             let currentText = skill.firstChild.textContent;
-
             let newText = prompt("Edit Skill", currentText);
 
             if (newText != null && newText != "") {
                 skill.firstChild.textContent = newText;
+                alert("Skill updated successfully!");
+            }
+        }
+
+        // Function to edit the job role
+        function editrole(){
+            const roleElement = document.getElementById('Role');
+            const currentrole = roleElement.textContent;
+            const newRole = prompt("Enter new role: ", currentrole);
+
+            if (newRole != null && newRole.trim() !== ''){
+                roleElement.textContent = newRole.trim();
+                alert("Role updated successfully!");
             }
         }
     </script>
@@ -89,6 +107,12 @@
     <div class="main">
 
         <h1>Skill Matrix</h1>
+        
+        <!-- Added Role section here so the editrole function works -->
+        <div class="role-container">
+            <strong>Current Role:</strong> <span id="Role">Software Developer Intern</span>
+            <button onclick="editrole()">Edit Role</button>
+        </div>
 
         <ol>
 
